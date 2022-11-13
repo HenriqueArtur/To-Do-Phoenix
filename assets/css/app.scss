@@ -1,8 +1,12 @@
 /* This file is for your main application CSS */
-// @import 'custom';
-// @import '../node_modules/bulma/bulma.sass';
-@import "./phoenix.scss";
+@import 'custom';
+@import '../node_modules/bulma/bulma.sass';
+// @import "./phoenix.scss";
 
+/* Custom Styles */
+.has-background-selection {
+  background-color: $selection;
+}
 /* Alerts and form errors used by phx.new */
 .alert {
   padding: 15px;

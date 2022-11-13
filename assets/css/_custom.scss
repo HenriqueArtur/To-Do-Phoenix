@@ -1,1 +1,27 @@
-$box-background-color: #ffb3b3;
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+
+// COLORS
+$primary: #a277ff;
+$info: #f694ff;
+$success: #61ffca;
+$warning: #ffca85;
+$danger: #ff6767;
+$light: #edecee;
+$dark: #15141b;
+
+$text: $light;
+
+$link: $warning;
+$link-hover: findColorInvert($info);
+
+// FONTS
+$family-primary: 'Fira Code', monospace;
+
+// GENERIC VARIABLES
+$body-family: 'Fira Code', monospace;
+$body-color: $light;
+$body-background-color: $dark;
+
+// CUSTOM VARs
+$selection: #29263c;
+$selection-alpha: #3d375e7f;
