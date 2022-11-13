@@ -9,23 +9,29 @@
     <link phx-track-static rel="stylesheet" href={Routes.static_path(@conn, "/assets/app.css")}/>
     <script defer phx-track-static type="text/javascript" src={Routes.static_path(@conn, "/assets/app.js")}></script>
   </head>
-  <body>
-    <header>
-      <section class="container">
-        <nav>
-          <ul>
-            <li><a href="https://hexdocs.pm/phoenix/overview.html">Get Started</a></li>
-            <%= if function_exported?(Routes, :live_dashboard_path, 2) do %>
-              <li><%= link "LiveDashboard", to: Routes.live_dashboard_path(@conn, :home) %></li>
-            <% end %>
-          </ul>
+  <body class="">
+    <header class="has-background-selection">
+      <section class="container py-5">
+        <nav class="navbar level has-background-selection" role="navigation">
+          <div class="level-left">
+            <h1 class="mx-1 is-size-3">
+              <%= link ~H"<strong>ToDoApp</strong> · Phoenix Framework", to: Routes.page_path(@conn, :index), class: "has-text-primary" %>
+            </h1>
+          </div>
           <%= render "_user_menu.html", assigns %>
         </nav>
-        <a href="https://phoenixframework.org/" class="phx-logo">
-          <img src={Routes.static_path(@conn, "/images/phoenix.png")} alt="Phoenix Framework Logo"/>
-        </a>
       </section>
     </header>
     <%= @inner_content %>
+    <footer class="footer has-background-selection">
+      <div class="content has-text-centered">
+        <p>
+          Made with 💜 by <a href="https://henriqueartur.com" target="_blank">Henrique Artur</a>. Developed as a <a href="https://phoenixframework.org/" target="_blank">Phoenix Framework</a> study.
+        </p>
+      </div>
+      <div class="content has-text-centered">
+        <%# ADD ICONS %>
+      </div>
+    </footer>
   </body>
 </html>

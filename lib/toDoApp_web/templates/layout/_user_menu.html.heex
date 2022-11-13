@@ -1,10 +1,13 @@
-<ul>
-<%= if @current_user do %>
-  <li><%= @current_user.email %></li>
-  <li><%= link "Settings", to: Routes.user_settings_path(@conn, :edit) %></li>
-  <li><%= link "Log out", to: Routes.user_session_path(@conn, :delete), method: :delete %></li>
-<% else %>
-  <li><%= link "Register", to: Routes.user_registration_path(@conn, :new) %></li>
-  <li><%= link "Log in", to: Routes.user_session_path(@conn, :new) %></li>
-<% end %>
-</ul>
+<div class="navbar-end has-background-selection">
+  <div class="navbar-item">
+    <div class="buttons">
+    <%= if @current_user do %>
+      <%= link "Profile", to: Routes.user_settings_path(@conn, :edit), class: "mx-1 button is-primary" %>
+      <%= link "Log out", to: Routes.user_session_path(@conn, :delete), method: :delete, class: "mx-1 button is-primary is-inverted is-outlined" %>
+    <% else %>
+      <%= link ~H"<strong>Sign up</strong>", to: Routes.user_registration_path(@conn, :new), class: "mx-1 button is-primary" %>
+      <%= link "Log in", to: Routes.user_session_path(@conn, :new), class: "mx-1 button is-success is-outlined" %>
+    <% end %>
+    </div>
+  </div>
+</div>
